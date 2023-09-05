@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 colorama = "*"
 keyboard = "*"
+unidecode = "*"
+requests = "*"
 
 [dev-packages]
 
