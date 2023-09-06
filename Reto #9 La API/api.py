@@ -11,9 +11,11 @@
 import requests
 from pprint import pprint
 
-url = "https://rickandmortyapi.com/api/character"
+from requests import Response
 
-r = requests.get(url)
+url: str = "https://rickandmortyapi.com/api/character"
+
+r: Response = requests.get(url)
 
 if r.status_code == 200:
     content = r.json()

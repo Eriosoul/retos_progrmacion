@@ -18,7 +18,7 @@ file_name = "text.txt"
 
 if os.path.exists(file_name):
     print("El fichero extiste. ¿Que quieres hacer?")
-    text = input("Pula \"enter\" para contunuar o escribe \"delete\" para eliminar: ")
+    text = input("Pulsa \"enter\" para contunuar o escribe \"delete\" para eliminar: ")
 
     if text == "delete":
         os.remove(file_name)
