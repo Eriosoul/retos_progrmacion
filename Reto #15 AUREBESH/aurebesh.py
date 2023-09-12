@@ -8,7 +8,7 @@
  *
  * ¡Que la fuerza os acompañe!
 """
-
+# Eeste reto me costo mas de lo debido y al final cai en mirar el codigo de Mouredev
 from unidecode import unidecode
 
 
@@ -53,9 +53,9 @@ def transform_sp_sw(text: str, aurebesh: bool) -> str:
     return translate_text
 
 
-aurebesh = transform_sp_sw("Pepe", False)
+aurebesh = transform_sp_sw("Amistandolarasuardon giminsastargustoquermos hormsitaporynsile", True)
 print(aurebesh)
-basic = transform_sp_sw(aurebesh, True)
+basic = transform_sp_sw(aurebesh, False)
 print(basic)
 
 aurebesh = transform_sp_sw("La fuerza se desvancece..", False)

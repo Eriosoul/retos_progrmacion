@@ -8,6 +8,7 @@ colorama = "*"
 keyboard = "*"
 unidecode = "*"
 requests = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 
