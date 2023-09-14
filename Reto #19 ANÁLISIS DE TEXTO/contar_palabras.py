@@ -8,7 +8,42 @@
  * Todo esto utilizando un único bucle.
 """
 
+import re
 
+
+def word_exercise(text: str):
+    word_content = 0
+    number_sentence = 0
+    letter_count = 0
+    long_word = []
+
+    words = text.replace("\n", "  ").split(" ")
+
+    for word in words:
+        if len(word) != 0:
+            if "." in word:
+                number_sentence += 1
+
+            current_word = re.sub(r"[^\w]", "", word)
+
+            print(current_word)
+
+            word_content += 1
+            letter_count += len(current_word)
+
+            if len(long_word) == 0 or len(long_word[0]) == len(current_word):
+                long_word.append(current_word)
+            elif len(current_word) > len(long_word[0]):
+                long_word.clear()
+                long_word.append(current_word)
+
+    print("Total de palabras: ", word_content)
+    print("Media de longitud: ", letter_count / word_content)
+    print("Cantidad oraciones: ", number_sentence)
+    print("Palabra larga : ", long_word)
+
+
+# Mi desarrollo
 def tema_palabras(text):
     palabra = text.split()
     cantidad_palabra = len(palabra)
@@ -49,9 +84,13 @@ def palabra_larga(text):
     return palabra_mas_larga
 
 
-text = """ Monster Hunter: World es un videojuego perteneciente al género de rol y acción. Desarrollado y publicado por 
-       la empresa Capcom, siendo el sexto título principal de la franquicia de videojuegos Monster Hunter.
-       """
+text = "Monster Hunter: World es un videojuego perteneciente al género de rol y acción. Desarrollado y publicado por la empresa Capcom, siendo el sexto título principal de la franquicia de videojuegos Monster Hunter."
+
+word_exercise("""
+Monster Hunter: World es un videojuego perteneciente al género de rol y acción. 
+Desarrollado y publicado por la empresa Capcom, siendo el sexto título 
+principal de la franquicia de videojuegos Monster Hunter.
+""")
 
 cantidad = tema_palabras(text)
 print("Numero de palabras: ", cantidad)
